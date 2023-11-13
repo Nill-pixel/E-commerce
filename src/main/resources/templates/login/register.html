@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+  <!-- basic -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- mobile metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!-- site metas -->
+  <title>Admin TUPUCA</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- site icon -->
+  <link rel="icon" href="images/fevicon.png" type="image/png" />
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="/admin/css/bootstrap.min.css" />
+  <!-- site css -->
+  <link rel="stylesheet" href="admin/style.css" />
+  <!-- responsive css -->
+  <link rel="stylesheet" href="admin/css/responsive.css" />
+  <!-- color css -->
+  <link rel="stylesheet" href="admin/css/colors.css" />
+  <!-- select bootstrap -->
+  <link rel="stylesheet" href="admin/css/bootstrap-select.css" />
+  <!-- scrollbar css -->
+  <link rel="stylesheet" href="admin/css/perfect-scrollbar.css" />
+  <!-- custom css -->
+  <link rel="stylesheet" href="admin/css/custom.css" />
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="inner_page login">
+  <div class="full_container">
+    <div class="container">
+      <div class="center verticle_center full_height">
+        <div class="login_section">
+          <div class="logo_login">
+            <div class="center">
+              <div class="user_info">
+                <h6>TUPUCA ONLINE <span class="online_animation"></span></h6>
+              </div>
+            </div>
+          </div>
+          <div class="login_form">
+            <form method="post" th:action="@{register}" th:object="${user}">
+              <fieldset>
+                <div class="field">
+                  <label class="label_field">Nome: </label>
+                  <input type="text" th:field="*{username}" name="name" placeholder="Nome de usuário" />
+                </div>
+                <div class="field">
+                  <label class="label_field">Email Address</label>
+                  <input type="email" th:field="*{email}" name="email" placeholder="E-mail" />
+                </div>
+                <div class="field">
+                  <label class="label_field">Password</label>
+                  <input type="password" th:field="*{password}" name="password" placeholder="Password" />
+                </div>
+                <div class="field">
+                  <label class="label_field">Número</label>
+                  <input type="number" th:field="*{number}" name="number" placeholder="Número" />
+                </div>
+                <div class="field ml-5 mt-4">
+                  <select class="form-control" name="address.id" id="InputAddress">
+                    <option selected>Endereço...</option>
+                    <option th:each="address : ${address}" th:value="${address.id}" th:text="${address.neighborhood}"
+                      id="InputAddress"></option>
+                  </select>
+                </div>
+                <div class="field margin_0">
+                  <label class="label_field hidden">hidden label</label>
+                  <button type="submit" class="main_bt mb-5">Registrar</button>
+                  <p class="ml-5">já tem uma conta? <a href="login">Conecte-se</a></p>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script th:inline="javascript">
+    window.addEventListener("DOMContentLoaded", function () {
+      var success = [[${ success }]];
+      if (success) {
+        Swal.fire({
+          title: "Sucesso!",
+          text: "O cadastro foi realizado com sucesso!",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+      }
+    });
+  </script>
+  <!-- jQuery -->
+  <script src="admin/js/jquery.min.js"></script>
+  <script src="admin/js/popper.min.js"></script>
+  <script src="admin/js/bootstrap.min.js"></script>
+  <!-- wow animation -->
+  <script src="admin/js/animate.js"></script>
+  <!-- select country -->
+  <script src="admin/js/bootstrap-select.js"></script>
+  <!-- owl carousel -->
+  <script src="admin/js/owl.carousel.js"></script>
+  <!-- chart js -->
+  <script src="admin/js/Chart.min.js"></script>
+  <script src="admin/js/Chart.bundle.min.js"></script>
+  <script src="admin/js/utils.js"></script>
+  <script src="admin/js/analyser.js"></script>
+  <!-- nice scrollbar -->
+  <script src="admin/js/perfect-scrollbar.min.js"></script>
+  <script>
+    var ps = new PerfectScrollbar('#sidebar');
+  </script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+  <script src="js/chart_custom_style1.js"></script>
+</body>
+
+</html>

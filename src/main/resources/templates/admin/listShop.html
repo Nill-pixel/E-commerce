@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+  <title>Admin TUPUCA</title>
+
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <link rel="icon" href="images/fevicon.png" type="image/png" />
+  <link rel="stylesheet" href="/admin/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="admin/style.css" />
+  <link rel="stylesheet" href="admin/css/responsive.css" />
+  <link rel="stylesheet" href="admin/css/colors.css" />
+  <link rel="stylesheet" href="admin/css/bootstrap-select.css" />
+  <link rel="stylesheet" href="admin/css/perfect-scrollbar.css" />
+  <link rel="stylesheet" href="admin/css/custom.css" />
+
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+</head>
+
+<body class="dashboard dashboard_1">
+  <div class="full_container">
+    <div class="inner_container">
+
+      <nav id="sidebar">
+        <div class="sidebar_blog_1">
+          <div class="sidebar-header">
+            <div class="logo_section">
+              <a href="admin"><img class="logo_icon img-responsive" src="images/logo/logo_icon.png" alt="#" /></a>
+            </div>
+          </div>
+          <div class="sidebar_user_info">
+            <div class="icon_setting"></div>
+            <div class="user_profle_side">
+              <div class="user_img"><img class="img-responsive" src="images/layout_img/user_img.png" alt="#" /></div>
+              <div class="user_info">
+                <h6>John David</h6>
+                <p><span class="online_animation"></span> Online</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar_blog_2">
+          <h4>Geral</h4>
+          <ul class="list-unstyled components">
+            <li><a href="../pluto-1.0.0/widgets.html"><i class="fa fa-users orange_color"></i> <span>Usuários</span></a>
+            </li>
+            <li>
+              <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                  class="fa fa-shopping-bag yellow_color"></i> <span>Lojas</span></a>
+              <ul class="collapse list-unstyled" id="element">
+                <li><a href="listShop">> <span>Listar lojas</span></a></li>
+                <li><a href="formShop">> <span>Cadastrar lojas</span></a></li>
+              </ul>
+            </li>
+            <li><a href="../pluto-1.0.0/settings.html"><i class="fa fa-cog red_color"></i> <span>Sair</span></a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="content">
+
+        <div class="topbar">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="full">
+              <div class="logo_section">
+                <div class="user_info">
+                  <h6>TUPUCA ONLINE </h6>
+                  <p><span class="online_animation"></span> ADMIN</p>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <div class="midde_cont">
+          <div class="container-fluid">
+            <div class="row column_title">
+              <div class="col-md-12">
+                <div class="page_title">
+                  <h2>Lojas</h2>
+                </div>
+              </div>
+            </div>
+
+            <div class="row column1">
+              <div class="col-md-12">
+                <div class="white_shd full margin_bottom_30">
+                  <div class="full graph_head">
+                    <div class="heading1 margin_0">
+                      <h2>Lojas</h2>
+                    </div>
+                  </div>
+                  <div class="full price_table padding_infor_info">
+                    <div class="row">
+
+                      <div th:each="shop: ${shops}"
+                        class="col-lg-4 col-md-6 col-sm-6 col-xs-12 profile_details margin_bottom_30">
+                        <div class="contact_blog">
+                          <h4 th:text="${shop.description}" class="brief">Digital Strategist</h4>
+                          <div class="contact_inner">
+                            <div class="left">
+                              <h3 th:text="${shop.name}">John Smith</h3>
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-envelope-o"></i> : <span th:text="${shop.email}"></span></li>
+                                <li><i class="fa fa-phone"></i>+244 : <span th:text="${shop.number}"></span></li>
+                              </ul>
+                            </div>
+                            <div class="right">
+                              <div class="profile_contacts">
+                                <img class="img-responsive" th:src="@{images/upload/shop/{image}(image=${shop.photos})}"
+                                  alt="#">
+                              </div>
+                            </div>
+                            <div class="bottom_list">
+                              <div class="right_button">
+                                <button type="button" class="btn btn-danger btn-xs"> <i class="fa fa-trash">
+                                  </i> <i class="fa fa-shopping-bag yellow_color"></i>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-xs">
+                                  <i class="fa fa-pencil"> </i> Editar
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="container-fluid">
+                      <div class="footer">
+                        <p>Copyright © 2018 Designed by html.design. All rights reserved.<br><br>
+                          Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="admin/js/jquery.min.js"></script>
+  <script src="admin/js/popper.min.js"></script>
+  <script src="admin/js/bootstrap.min.js"></script>
+  <script src="admin/js/animate.js"></script>
+  <script src="admin/js/bootstrap-select.js"></script>
+  <script src="admin/js/owl.carousel.js"></script>
+  <script src="admin/js/Chart.min.js"></script>
+  <script src="admin/js/Chart.bundle.min.js"></script>
+  <script src="admin/js/utils.js"></script>
+  <script src="admin/js/analyser.js"></script>
+  <script src="admin/js/perfect-scrollbar.min.js"></script>
+
+  <script>
+    var ps = new PerfectScrollbar('#sidebar');
+  </script>
+
+  <script src="js/custom.js"></script>
+  <script src="js/chart_custom_style1.js"></script>
+</body>
+
+</html>
