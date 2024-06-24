@@ -25,7 +25,7 @@ import java.util.Objects;
 @Controller
 public class AdminController {
 
-    public static final String UPLOAD_DIR = "C:\\Users\\DELL\\IdeaProjects\\App-Web\\App\\src\\main\\resources\\static\\images\\upload\\product\\";
+    public static final String UPLOAD_DIR = "D:\\E-commerce\\src\\main\\resources\\static\\images\\upload\\shop";
     public final ShopRepository shopRepository;
     public final AddressRepository addressRepository;
     public final ProductRepository productRepository;

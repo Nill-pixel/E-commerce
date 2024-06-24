@@ -27,7 +27,7 @@ import java.util.Objects;
 
 @Controller
 public class ShopController {
-    private static final String UPLOAD_DIR = "C:\\Users\\DELL\\IdeaProjects\\App-Web\\App\\src\\main\\resources\\static\\images\\upload\\product\\";
+    private static final String UPLOAD_DIR = "D:\\E-commerce\\src\\main\\resources\\static\\images\\upload\\product";
 
     private final ProductRepository productRepository;
     private final ShopService shopService;
